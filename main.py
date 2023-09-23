@@ -24,6 +24,8 @@ val_images = sorted(glob(os.path.join(DATA_DIR, "Images/*")))[
 val_masks = sorted(glob(os.path.join(DATA_DIR, "Category_ids/*")))[
     NUM_TRAIN_IMAGES : NUM_VAL_IMAGES + NUM_TRAIN_IMAGES
 ]
+print("Size training set: ", len(train_images))
+print("Size validation set: ", len(val_images))
 
 def read_image(image_path, mask=False):
     image = tf.io.read_file(image_path)
