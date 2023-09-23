@@ -121,3 +121,45 @@ def DeeplabV3Plus(image_size, num_classes):
 
 model = DeeplabV3Plus(image_size=IMAGE_SIZE, num_classes=NUM_CLASSES)
 model.summary()
+
+# Training
+loss = keras.losses.SparseCategoricalCrossentropy(from_logits=True)
+model.compile(
+    optimizer=keras.optimizers.Adam(learning_rate=0.001),
+    loss=loss,
+    metrics=["accuracy"],
+)
+history = model.fit(train_dataset, validation_data=val_dataset, epochs=25)
+
+# Plotting
+plt.plot(history.history["loss"])
+plt.title("Training Loss")
+plt.ylabel("loss")
+plt.xlabel("epoch")
+plt.show()
+plt.savefig("figure01.png")
+plt.close()
+
+plt.plot(history.history["accuracy"])
+plt.title("Training Accuracy")
+plt.ylabel("accuracy")
+plt.xlabel("epoch")
+plt.show()
+plt.savefig("figure02.png")
+plt.close()
+
+plt.plot(history.history["val_loss"])
+plt.title("Validation Loss")
+plt.ylabel("val_loss")
+plt.xlabel("epoch")
+plt.show()
+plt.savefig("figure03.png")
+plt.close()
+
+plt.plot(history.history["val_accuracy"])
+plt.title("Validation Accuracy")
+plt.ylabel("val_accuracy")
+plt.xlabel("epoch")
+plt.show()
+plt.savefig("figure04.png")
+plt.close()
