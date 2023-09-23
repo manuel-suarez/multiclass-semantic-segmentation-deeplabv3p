@@ -12,7 +12,7 @@ from tensorflow.keras import layers
 IMAGE_SIZE = 512
 BATCH_SIZE = 4
 NUM_CLASSES = 20
-DATA_DIR = "/home/est_posgrado_manuel.suarez/data/instance-level_human_parsing/instance-level_human_parsing/Trainig"
+DATA_DIR = "/home/est_posgrado_manuel.suarez/data/instance-level_human_parsing/instance-level_human_parsing/Training"
 NUM_TRAIN_IMAGES = 1000
 NUM_VAL_IMAGES = 50
 
