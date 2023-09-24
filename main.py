@@ -125,7 +125,7 @@ model.compile(
     loss=loss,
     metrics=["accuracy"],
 )
-history = model.fit(train_dataset, validation_data=val_dataset, epochs=25)
+history = model.fit(train_dataset, validation_data=val_dataset, epochs=40)
 
 # Plotting
 plt.plot(history.history["loss"])
